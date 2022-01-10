@@ -5,11 +5,13 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v2.5.1
         name: Setup Node
+      - name: Install dependencies
+        run: npm i
       - uses: actions/checkout@v2
         name: Checkout code
       - name: Download dependencies
