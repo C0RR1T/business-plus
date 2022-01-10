@@ -1,3 +1,3 @@
 export default function StartPage() {
-    return <div>Hello Corsin</div>;
+    return <div>Hallo Corsin</div>;
 }
