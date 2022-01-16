@@ -1,0 +1,12 @@
+.start-page__container{
+    margin-top: 5%;
+}
+
+.start-page__card-header{
+    font-weight: bolder;
+}
+
+.start-page__button{
+    background: #269BD0;
+    border: #278bbd;
+}

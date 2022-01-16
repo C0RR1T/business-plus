@@ -1,0 +1,20 @@
+.navigation__container {
+    background: #35353d;
+    text-align: left;
+}
+
+.navigation__logo-image {
+    width: 10%;
+    display: inline-block;
+}
+
+.navigation__routing-container {
+    height: 100%;
+    display: inline-block;
+}
+
+.navigation__routing-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 2rem;
+}
