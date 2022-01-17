@@ -27,9 +27,7 @@ export default function StartPage() {
                                     Geschäftsreisen mit uns buchen
                                 </div>
                                 <Link to={'/travels'}>
-                                    <Button className={'start-page__button'}>
-                                        Geschäftsreise buchen
-                                    </Button>
+                                    <Button>Geschäftsreise buchen</Button>
                                 </Link>
                             </Card.Body>
                         </Card>
@@ -49,9 +47,7 @@ export default function StartPage() {
                                     Geschäftsreisen mit uns buchen
                                 </div>
                                 <Link to={'/meetings'}>
-                                    <Button className={'start-page__button'}>
-                                        Meetingraum buchen
-                                    </Button>
+                                    <Button>Meetingraum buchen</Button>
                                 </Link>
                             </Card.Body>
                         </Card>

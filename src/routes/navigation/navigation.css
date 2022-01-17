@@ -16,5 +16,19 @@
 .navigation__routing-link {
     text-decoration: none;
     color: white;
-    margin-right: 2rem;
+    margin-right: 1rem;
+}
+
+.navigation__registration-and-logIn{
+    text-align: right;
+}
+
+.navigation__main-button{
+    background: #269BD0;
+    border: #278bbd;
+}
+
+.navigation__secondary-button{
+    background: #4a5167;
+    border: #3f4558;
 }
