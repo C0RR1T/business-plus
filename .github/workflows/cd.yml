@@ -14,6 +14,8 @@ jobs:
         name: Checkout code
       - name: Install dependencies
         run: npm i
+      - name: Build
+        run: npm run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
