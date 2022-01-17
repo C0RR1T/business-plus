@@ -15,12 +15,17 @@ export default function Navigation() {
                 <Row>
                     <Col>
                         <Link className={'navigation__routing-link'} to={'/'}>
-                            Startpage
+                            Startseite
                         </Link>
                         <Link
                             className={'navigation__routing-link'}
-                            to={'/profile'}>
-                            Profil
+                            to={'/flight'}>
+                            Flug buchen
+                        </Link>
+                        <Link
+                            className={'navigation__routing-link'}
+                            to={'/meeting'}>
+                            Meeting buchen
                         </Link>
                     </Col>
                     <Col className={'navigation__registration-and-logIn'}>

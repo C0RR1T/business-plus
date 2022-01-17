@@ -26,7 +26,7 @@ export default function StartPage() {
                                     Einfach und unkompliziert Ihre
                                     Geschäftsreisen mit uns buchen
                                 </div>
-                                <Link to={'/travels'}>
+                                <Link to={'/flight'}>
                                     <Button>Geschäftsreise buchen</Button>
                                 </Link>
                             </Card.Body>
@@ -46,7 +46,7 @@ export default function StartPage() {
                                     Einfach und unkompliziert Ihre
                                     Geschäftsreisen mit uns buchen
                                 </div>
-                                <Link to={'/meetings'}>
+                                <Link to={'/meeting'}>
                                     <Button>Meetingraum buchen</Button>
                                 </Link>
                             </Card.Body>
