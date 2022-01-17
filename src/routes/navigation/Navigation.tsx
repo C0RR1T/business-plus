@@ -1,5 +1,5 @@
 import logo from '../../static/business_plus__logo.png';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './navigation.css';
 
@@ -19,13 +19,20 @@ export default function Navigation() {
                         </Link>
                         <Link
                             className={'navigation__routing-link'}
+                            to={'/profile'}>
+                            Profil
+                        </Link>
+                    </Col>
+                    <Col className={'navigation__registration-and-logIn'}>
+                        <Link
+                            className={'navigation__routing-link'}
                             to={'/login'}>
-                            Log In
+                            <Button variant={'secondary'}>Log In</Button>
                         </Link>
                         <Link
                             className={'navigation__routing-link'}
-                            to={'/profile'}>
-                            Profil
+                            to={'/register'}>
+                            <Button>Registration</Button>
                         </Link>
                     </Col>
                 </Row>
