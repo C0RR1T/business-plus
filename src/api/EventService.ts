@@ -29,6 +29,7 @@ type Events = {
  * Gets all the Events (Meetings AND Flights) of a specific user
  * @param email Email of the user
  * @param time Meetings after specified time. Defaults to 0 (--> 1.1.1970)
+ * @return Flights and Meetings of the user
  */
 const getEventsOfUser = async (email: string, time: number = 0): Promise<Events> => {
     const meetings = await getMeetingOfUser(email, time);
