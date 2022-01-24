@@ -1,4 +1,4 @@
-import axios from '../AxiosInstance';
+import axios from './AxiosInstance';
 import { User } from './API';
 
 /**

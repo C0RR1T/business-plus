@@ -1,5 +1,5 @@
 import { Flight, Meeting } from './API';
-import axios from '../AxiosInstance';
+import axios from './AxiosInstance';
 
 /**
  * Gets all the Flights of a user
