@@ -1,24 +1,47 @@
 import logo from '../../static/business_plus__logo.png';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './navigation.css';
 
 export default function Navigation() {
     return (
-        <Navbar bg={'dark'} >
-            <Container>
-                <Navbar.Brand><img src={logo} alt={'Logo von Business+'} /></Navbar.Brand>
-                <Navbar.Collapse>
-                    <Nav>
-                        <Nav.Link href={'/'}>Startseite</Nav.Link>
-                        <Nav.Link href={'/flights'}>Flug buchen</Nav.Link>
-                        <Nav.Link href={'/meetings'}>Meeting buchen</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-                <Nav>
-                    <Button>Log in</Button>
-                    <Button>Registrieren</Button>
-                </Nav>
+        <div className={'navigation__container'}>
+            <img
+                className={'navigation__logo-image'}
+                src={logo}
+                alt={'Business+'}
+            />
+            <Container className={'navigation__routing-container'}>
+                <Row>
+                    <Col>
+                        <Link className={'navigation__routing-link'} to={'/'}>
+                            Startseite
+                        </Link>
+                        <Link
+                            className={'navigation__routing-link'}
+                            to={'/flights'}>
+                            Flug buchen
+                        </Link>
+                        <Link
+                            className={'navigation__routing-link'}
+                            to={'/meetings'}>
+                            Meeting buchen
+                        </Link>
+                    </Col>
+                    <Col className={'navigation__registration-and-logIn'}>
+                        <Link
+                            className={'navigation__routing-link'}
+                            to={'/login'}>
+                            <Button variant={'secondary'}>Log In</Button>
+                        </Link>
+                        <Link
+                            className={'navigation__routing-link'}
+                            to={'/register'}>
+                            <Button>Registration</Button>
+                        </Link>
+                    </Col>
+                </Row>
             </Container>
-        </Navbar>
+        </div>
     );
 }
