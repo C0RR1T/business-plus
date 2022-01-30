@@ -24,8 +24,8 @@ export default function Flight() {
             flightName,
             from,
             to,
-            startDate.getMilliseconds(),
-            returnDate.getMilliseconds(),
+            startDate.getTime(),
+            returnDate.getTime(),
             usersAdded,
             email
         );
