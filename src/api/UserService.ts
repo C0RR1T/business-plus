@@ -7,7 +7,9 @@ import { User } from './API';
  * @param password Password of the user
  */
 const getUser = async (email: string, password: string): Promise<User> => {
-    return await axios.get<User>(encodeURI(`/users?email=${email}&password=${password}`)).then(data => data.data);
+    return await axios
+        .get<User>(encodeURI(`/users?email=${email}&password=${password}`))
+        .then(data => data.data);
 };
 
 /**
@@ -18,9 +20,8 @@ const getUser = async (email: string, password: string): Promise<User> => {
 const createUser = async (email: string, password: string): Promise<void> => {
     await axios.post<User>('/users', {
         email,
-        password
+        password,
     });
 };
 
-
-export {getUser, createUser}
+export { getUser, createUser };

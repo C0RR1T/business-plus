@@ -7,8 +7,15 @@ import axios from './AxiosInstance';
  * @param time Flights after specified time. Defaults to 0 (--> 1.1.1970).
  * @return The Flights of the user.
  */
-const getFlightsOfUser = async (email: string, time: number = 0): Promise<Array<Flight>> => {
-    return await axios.get<Array<Flight>>(`/flights`).then((res) => res.data.filter(val => val.users.includes(email) && val.end >= time));
+const getFlightsOfUser = async (
+    email: string,
+    time: number = 0
+): Promise<Array<Flight>> => {
+    return await axios
+        .get<Array<Flight>>(`/flights`)
+        .then(res =>
+            res.data.filter(val => val.users.includes(email) && val.end >= time)
+        );
 };
 
 /**
@@ -17,27 +24,37 @@ const getFlightsOfUser = async (email: string, time: number = 0): Promise<Array<
  * @param time Meetings after specified time. Defaults to 0 (--> 1.1.1970).
  * @return The Meetings of the user
  */
-const getMeetingOfUser = async (email: string, time: number = 0): Promise<Array<Meeting>> => {
-    return await axios.get<Array<Meeting>>('/meetings').then(res => res.data.filter(val => val.users.includes(email) && val.end >= time));
+const getMeetingOfUser = async (
+    email: string,
+    time: number = 0
+): Promise<Array<Meeting>> => {
+    return await axios
+        .get<Array<Meeting>>('/meetings')
+        .then(res =>
+            res.data.filter(val => val.users.includes(email) && val.end >= time)
+        );
 };
 
 type Events = {
-    meetings: Array<Meeting>,
-    flights: Array<Flight>
-}
+    meetings: Array<Meeting>;
+    flights: Array<Flight>;
+};
 /**
  * Gets all the Events (Meetings AND Flights) of a specific user
  * @param email Email of the user
  * @param time Meetings after specified time. Defaults to 0 (--> 1.1.1970)
  * @return Flights and Meetings of the user
  */
-const getEventsOfUser = async (email: string, time: number = 0): Promise<Events> => {
+const getEventsOfUser = async (
+    email: string,
+    time: number = 0
+): Promise<Events> => {
     const meetings = await getMeetingOfUser(email, time);
     const flights = await getFlightsOfUser(email, time);
 
     return {
         meetings,
-        flights
+        flights,
     };
 };
 
@@ -51,17 +68,22 @@ const getEventsOfUser = async (email: string, time: number = 0): Promise<Events>
  * @param users E-Mail of users participating.
  * @param email E-Mail of the user that creates the event.
  */
-const createMeeting = async (end: number, start: number, place: string, name: string, description: string, users: Array<string>, email: string): Promise<void> => {
+const createMeeting = async (
+    end: number,
+    start: number,
+    place: string,
+    name: string,
+    description: string,
+    users: Array<string>,
+    email: string
+): Promise<void> => {
     await axios.post<Meeting>('/meetings', {
         end,
         start,
         place,
         name,
         description,
-        users: [
-            ...users,
-            email
-        ]
+        users: [...users, email],
     });
 };
 
@@ -75,18 +97,29 @@ const createMeeting = async (end: number, start: number, place: string, name: st
  * @param users E-Mail of the users participating
  * @param email E-Mail of the user that creates the flight
  */
-const createFlight = async (name: string, from: string, to: string, start: number, end: number, users: Array<string>, email: string): Promise<void> => {
+const createFlight = async (
+    name: string,
+    from: string,
+    to: string,
+    start: number,
+    end: number,
+    users: Array<string>,
+    email: string
+): Promise<void> => {
     await axios.post('/flights', {
         name,
         from,
         to,
         start,
         end,
-        users: [
-            ...users,
-            email
-        ]
+        users: [...users, email],
     });
-}
+};
 
-export { getEventsOfUser, getFlightsOfUser, getMeetingOfUser, createFlight, createMeeting };
+export {
+    getEventsOfUser,
+    getFlightsOfUser,
+    getMeetingOfUser,
+    createFlight,
+    createMeeting,
+};

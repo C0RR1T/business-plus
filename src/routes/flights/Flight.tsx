@@ -96,16 +96,15 @@ export default function Flight() {
             </Row>
             <Row className={'input-row'}>
                 <Form.Label>Begleitpersonen</Form.Label>
-                {usersAdded.map(() => {
-                    return (
-                        <Form.Control
-                            style={{ width: '90%', marginRight: '2.5%' }}
-                            type='email'
-                            placeholder='example@example.example'
-                            onChange={e => setAddUser(e.target.value)}
-                        />
-                    );
-                })}
+                {usersAdded.map((_, idx) => (
+                    <Form.Control
+                        style={{ width: '90%', marginRight: '2.5%' }}
+                        type='email'
+                        key={idx}
+                        placeholder='example@example.example'
+                        onChange={e => setAddUser(e.target.value)}
+                    />
+                ))}
                 <Button
                     style={{ width: '7.5%' }}
                     variant={'secondary'}
