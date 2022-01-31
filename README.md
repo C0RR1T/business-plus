@@ -10,3 +10,5 @@ It is easy to use and also pretty usefull
 
 ## Start json-server
 `yarn start-server`or `npm run start-server`
+
+Es muss beides gestartet sein
